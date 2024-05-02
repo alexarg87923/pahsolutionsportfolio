@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "Contact";
+}
+
+@model pahsolutionsportfolio.Models.ContactViewModel
+
+<div class="bg-white shadow-md rounded-lg">
+    <div class="p-8">
+        <div class="mx-auto max-w-4xl">
+            <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-10">Contact us!</h2> 
+
+            <form asp-controller="Contact" asp-action="Contact" method="POST">
+                <div asp-validation-summary="ModelOnly" class="text-red-600 mb-6"></div>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
+                        <strong class="font-bold">Success!</strong>
+                        <span class="block sm:inline">@TempData["SuccessMessage"]</span>
+                    </div>
+                }
+
+                <div class="mb-6">
+                    <label asp-for="SelectedField" class="block text-lg font-semibold mb-2 text-gray-700">Select a field</label>
+                    <select asp-for="SelectedField" asp-items="Model.Fields" class="block w-full bg-gray-100 border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 rounded-md shadow-sm mb-3 transition duration-300 ease-in-out">
+                        <option value="">Inquiry Type</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label asp-for="Name" class="block text-lg font-semibold mb-2 text-gray-700">Name</label>
+                    <input asp-for="Name" autocomplete="off" class="block w-full bg-gray-100 border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 rounded-md shadow-sm p-4 transition duration-300 ease-in-out">
+                </div>
+
+                <div class="mb-6">
+                    <label asp-for="Email" class="block text-lg font-semibold mb-2 text-gray-700">Email Address</label>
+                    <input asp-for="Email" autocomplete="off" class="block w-full bg-gray-100 border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 rounded-md shadow-sm p-4 transition duration-300 ease-in-out">
+                </div>
+
+                <div class="mb-6">
+                    <label asp-for="Description" class="block text-lg font-semibold mb-2 text-gray-700">Briefly describe your project</label>
+                    <textarea asp-for="Description" autocomplete="off" class="block w-full bg-gray-100 border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 rounded-md shadow-sm p-4 leading-relaxed transition duration-300 ease-in-out" rows="4"></textarea>
+                </div>
+
+                <div class="flex items-center mb-6">
+                    <input asp-for="IsNDARequired" type="checkbox" class="focus:ring focus:ring-blue-200 h-4 w-4 text-blue-600 border-gray-300 rounded" id="flexCheckDefault">
+                    <label asp-for="IsNDARequired" class="ml-2 text-gray-700">I want my project to be protected under an NDA</label>
+                </div>
+
+                <div class="text-center mt-6 mb-10">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-xl">
+                        Send Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
