@@ -1,4 +1,3 @@
-
 namespace pahsolutionsportfolio.Models;
 
 public class ErrorViewModel

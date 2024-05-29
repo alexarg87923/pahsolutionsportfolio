@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "concurrently -n \"Website,TailWindCSS\" -c \"green,blue\" \"npm run start:app\" \"npm run tailwind-watch\"",
+    "start:app": "dotnet watch run",
+    "tailwind-watch": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --minify --watch",
+    "build": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --build",
+    
+    "postinstall": "dotnet restore ./pahsolutionsportfolio.csproj"
+    },
+  "devDependencies": {
+    "daisyui": "^4.10.4",
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
