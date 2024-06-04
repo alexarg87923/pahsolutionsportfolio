@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Modal, Nav, Dropdown } from 'react-bootstrap';
-import Login from 'components/authentication/simple/Login';
-import Registration from 'components/authentication/simple/Registration';
+// import Login from 'components/authentication/simple/Login';
+// import Registration from 'components/authentication/simple/Registration';
 import ThemeControlDropdown from 'components/navbar/top/ThemeControlDropdown';
 
 const LandingRightSideNavItem = () => {
@@ -21,7 +21,7 @@ const LandingRightSideNavItem = () => {
         <Dropdown.Menu className="dropdown-menu-end dropdown-menu-card mt-0 dropdown-caret dropdown-caret-bg">
           <Card className="navbar-card-login shadow-none">
             <Card.Body className="fs-10 fw-normal p-4">
-              <Login />
+              {/* <Login /> */}
             </Card.Body>
           </Card>
         </Dropdown.Menu>
@@ -43,7 +43,7 @@ const LandingRightSideNavItem = () => {
           <Modal.Body className="p-0">
             <Card>
               <Card.Body className="fs-10 fw-normal p-4">
-                <Registration />
+                {/* <Registration /> */}
               </Card.Body>
             </Card>
           </Modal.Body>

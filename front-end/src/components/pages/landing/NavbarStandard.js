@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import handleNavbarTransparency from 'helpers/handleNavbarTransparency';
-import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus';
+// import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus';
 import LandingRightSideNavItem from './LandingRightSideNavItem';
 import { topNavbarBreakpoint } from 'config';
-import { useAppContext } from 'providers/AppProvider';
 import ThemeControlDropdown from 'components/navbar/top/ThemeControlDropdown';
 import Flex from 'components/common/Flex';
 
 const NavbarStandard = () => {
-  const {
-    config: { isDark }
-  } = useAppContext();
-  const [navbarCollapsed, setNavbarCollapsed] = useState(true);
+  //   const {
+  //     config: { isDark }
+  //   } = useAppContext();
+  //   const [navbarCollapsed, setNavbarCollapsed] = useState(true);
 
   useEffect(() => {
     window.addEventListener('scroll', handleNavbarTransparency);
@@ -23,12 +22,12 @@ const NavbarStandard = () => {
 
   return (
     <Navbar
-      variant={isDark ? 'light' : 'dark'}
+      //   variant={isDark ? 'light' : 'dark'}
       fixed="top"
       expand={topNavbarBreakpoint}
       className={classNames('navbar-standard navbar-theme', {
-        'bg-100': !navbarCollapsed && isDark,
-        'bg-dark': !navbarCollapsed && !isDark
+        // 'bg-100': !navbarCollapsed && isDark,
+        // 'bg-dark': !navbarCollapsed && !isDark
       })}
     >
       <Container>
@@ -37,11 +36,11 @@ const NavbarStandard = () => {
         </Navbar.Brand>
         <Flex alignItems="center" className="gap-2">
           <ThemeControlDropdown dropdownClassName="d-lg-none" />
-          <Navbar.Toggle onClick={() => setNavbarCollapsed(!navbarCollapsed)} />
+          {/* <Navbar.Toggle onClick={() => setNavbarCollapsed(!navbarCollapsed)} /> */}
         </Flex>
         <Navbar.Collapse className="scrollbar">
           <Nav>
-            <NavbarTopDropDownMenus setNavbarCollapsed={setNavbarCollapsed} />
+            {/* <NavbarTopDropDownMenus setNavbarCollapsed={setNavbarCollapsed} /> */}
           </Nav>
           <LandingRightSideNavItem />
         </Navbar.Collapse>

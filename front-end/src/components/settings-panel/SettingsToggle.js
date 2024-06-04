@@ -1,12 +1,11 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { useAppContext } from 'providers/AppProvider';
 
 const SettingsToggle = () => {
-  const { setConfig } = useAppContext();
+  //   const { setConfig } = useAppContext();
 
   const handleClick = () => {
-    setConfig('showSettingPanel', true);
+    // setConfig('showSettingPanel', true);
   };
 
   return (

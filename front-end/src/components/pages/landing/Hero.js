@@ -1,18 +1,18 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useAppContext } from 'providers/AppProvider';
+// import { useAppContext } from 'providers/AppProvider';
 import bg1 from 'assets/img/generic/bg-1.jpg';
-import dashboardDark from 'assets/img/generic/dashboard-alt-dark.png';
-import dashboard from 'assets/img/generic/dashboard-alt.jpg';
+// import dashboardDark from 'assets/img/generic/dashboard-alt-dark.png';
+// import dashboard from 'assets/img/generic/dashboard-alt.jpg';
 import Section from 'components/common/Section';
 import { Button, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
-  const {
-    config: { isDark, isRTL }
-  } = useAppContext();
+  //   const {
+  //     config: { isDark, isRTL }
+  //   } = useAppContext();
 
   return (
     <Section
@@ -46,7 +46,7 @@ const Hero = () => {
               <Typewriter
                 words={['design', 'beauty', 'elegance', 'perfection']}
                 loop={false}
-                cursor={!isRTL ? true : false}
+                // cursor={!isRTL ? true : false}
                 cursorStyle="|"
                 typeSpeed={70}
                 deleteSpeed={50}
@@ -78,7 +78,7 @@ const Hero = () => {
           <Link to="/" className="img-landing-banner">
             <img
               className="img-fluid"
-              src={isDark ? dashboardDark : dashboard}
+              //   src={isDark ? dashboardDark : dashboard}
               alt=""
             />
           </Link>

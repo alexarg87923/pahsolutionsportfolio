@@ -15,23 +15,22 @@ import settings from 'assets/img/icons/spot-illustrations/settings.png';
 import Flex from 'components/common/Flex';
 import RadioItem from './RadioItem';
 import SubtleBadge from 'components/common/SubtleBadge';
-import { useAppContext } from 'providers/AppProvider';
 
 const SettingsPanel = () => {
-  const {
-    config: {
-      isFluid,
-      isRTL,
-      theme,
-      navbarPosition,
-      navbarStyle,
-      showSettingPanel,
-      disabledNavbarPosition
-    },
-    setConfig,
-    changeTheme,
-    configDispatch
-  } = useAppContext();
+  //   const {
+  //     config: {
+  //       isFluid,
+  //       isRTL,
+  //       theme,
+  //       navbarPosition,
+  //       navbarStyle,
+  //       showSettingPanel,
+  //       disabledNavbarPosition
+  //     },
+  //     setConfig,
+  //     changeTheme,
+  //     configDispatch
+  //   } = useAppContext();
 
   const [navbars] = useState([
     {
@@ -54,8 +53,8 @@ const SettingsPanel = () => {
 
   return (
     <Offcanvas
-      show={showSettingPanel}
-      onHide={() => setConfig('showSettingPanel', false)}
+      //   show={showSettingPanel}
+      //   onHide={() => setConfig('showSettingPanel', false)}
       placement="end"
       style={{ maxWidth: '22rem' }}
       className="border-0"
@@ -77,7 +76,7 @@ const SettingsPanel = () => {
               className="rounded-pill mt-0 mb-0"
               style={{ fontSize: '12px' }}
               onClick={() => {
-                configDispatch({ type: 'RESET' });
+                // configDispatch({ type: 'RESET' });
               }}
             >
               <FontAwesomeIcon
@@ -102,22 +101,22 @@ const SettingsPanel = () => {
           <RadioItem
             name="theme-mode"
             label="light"
-            active={theme === 'light'}
-            onChange={() => changeTheme('light')}
+            // active={theme === 'light'}
+            // onChange={() => changeTheme('light')}
             image={defaultModeImg}
           />
           <RadioItem
             name="theme-mode"
             label="dark"
-            active={theme === 'dark'}
-            onChange={() => changeTheme('dark')}
+            // active={theme === 'dark'}
+            // onChange={() => changeTheme('dark')}
             image={darkModeImg}
           />
           <RadioItem
             name="theme-mode"
             label="auto"
-            active={theme === 'auto'}
-            onChange={() => changeTheme('auto')}
+            // active={theme === 'auto'}
+            // onChange={() => changeTheme('auto')}
             image={autoModeImg}
           />
         </ButtonGroup>
@@ -138,8 +137,8 @@ const SettingsPanel = () => {
           <Form.Check
             type="switch"
             id="rtl-switch"
-            checked={isRTL}
-            onChange={({ target }) => setConfig('isRTL', target.checked)}
+            // checked={isRTL}
+            // onChange={({ target }) => setConfig('isRTL', target.checked)}
           />
         </Flex>
         <hr />
@@ -153,8 +152,8 @@ const SettingsPanel = () => {
           <Form.Check
             type="switch"
             id="fluid-mode-switch"
-            checked={isFluid}
-            onChange={({ target }) => setConfig('isFluid', target.checked)}
+            // checked={isFluid}
+            // onChange={({ target }) => setConfig('isFluid', target.checked)}
           />
         </Flex>
         <hr />
@@ -174,15 +173,15 @@ const SettingsPanel = () => {
             <Form.Select
               className="mb-3"
               size="sm"
-              defaultValue={navbarPosition}
-              onChange={({ target }) =>
-                setConfig('navbarPosition', target.value)
-              }
+              //   defaultValue={navbarPosition}
+              //   onChange={({ }) =>
+              //     // setConfig('navbarPosition', target.value)
+              //   }
             >
               {['vertical', 'top', 'combo', 'double-top'].map(option => (
                 <option
                   key={option}
-                  disabled={disabledNavbarPosition.includes(option)}
+                  //   disabled={disabledNavbarPosition.includes(option)}
                   value={option}
                 >
                   {option.charAt(0).toUpperCase() + option.slice(1)}
@@ -203,8 +202,8 @@ const SettingsPanel = () => {
               key={item.name}
               name="navbar-style"
               label={item.name}
-              active={navbarStyle === item.name}
-              onChange={() => setConfig('navbarStyle', item.name)}
+              //   active={navbarStyle === item.name}
+              //   onChange={() => setConfig('navbarStyle', item.name)}
               image={item.image}
             />
           ))}
@@ -215,8 +214,8 @@ const SettingsPanel = () => {
               key={item.name}
               name="navbar-style"
               label={item.name}
-              active={navbarStyle === item.name}
-              onChange={() => setConfig('navbarStyle', item.name)}
+              //   active={navbarStyle === item.name}
+              //   onChange={() => setConfig('navbarStyle', item.name)}
               image={item.image}
             />
           ))}

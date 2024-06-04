@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { themeVariants } from 'config';
-import { useAppContext } from 'providers/AppProvider';
+// import { useAppContext } from 'providers/AppProvider';
 
 const ThemeControlDropdown = ({
   dropdownClassName,
   iconClassName = 'fs-8'
 }) => {
-  const {
-    config: { theme },
-    changeTheme
-  } = useAppContext();
+  //   const {
+  //     config: { theme },
+  //     changeTheme
+  //   } = useAppContext();
 
   return (
     <Dropdown
       navbar={true}
       as="div"
-      onSelect={colorMode => changeTheme(colorMode)}
+      //   onSelect={colorMode => changeTheme(colorMode)}
       className={`theme-control-dropdown ${dropdownClassName ?? ''}`}
     >
       <Dropdown.Toggle
@@ -27,9 +27,9 @@ const ThemeControlDropdown = ({
         className="nav-link dropdown-toggle d-flex align-items-center pe-1"
       >
         <FontAwesomeIcon
-          icon={
-            theme === 'light' ? 'sun' : theme === 'dark' ? 'moon' : 'adjust'
-          }
+          //   icon={
+          //     theme === 'light' ? 'sun' : theme === 'dark' ? 'moon' : 'adjust'
+          //   }
           className={iconClassName}
         />
       </Dropdown.Toggle>
@@ -39,7 +39,7 @@ const ThemeControlDropdown = ({
           {themeVariants.map(colorMode => (
             <Dropdown.Item
               key={colorMode}
-              active={theme === colorMode}
+              //   active={theme === colorMode}
               eventKey={colorMode}
               className="link-600 fs-10 d-flex align-items-center gap-2"
             >
@@ -53,9 +53,9 @@ const ThemeControlDropdown = ({
                 }
               />
               {colorMode.charAt(0).toUpperCase() + colorMode.slice(1)}
-              {theme === colorMode && (
+              {/* {theme === colorMode && (
                 <FontAwesomeIcon icon="check" className="ms-auto text-600" />
-              )}
+              )} */}
             </Dropdown.Item>
           ))}
         </div>

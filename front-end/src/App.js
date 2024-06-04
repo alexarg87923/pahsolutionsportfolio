@@ -6,7 +6,6 @@ import { Chart as ChartJS, registerables } from 'chart.js';
 import { CloseButton } from 'components/common/Toast';
 import SettingsToggle from 'components/settings-panel/SettingsToggle';
 import SettingsPanel from 'components/settings-panel/SettingsPanel';
-import { useAppContext } from 'providers/AppProvider';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,9 +13,6 @@ ChartJS.register(...registerables);
 
 const App = () => {
   const HTMLClassList = document.getElementsByTagName('html')[0].classList;
-  const {
-    config: { navbarPosition }
-  } = useAppContext();
 
   useEffect(() => {
     if (is.windows()) {
@@ -34,11 +30,9 @@ const App = () => {
   }, [HTMLClassList]);
 
   useEffect(() => {
-    if (navbarPosition === 'double-top') {
-      HTMLClassList.add('double-top-nav-layout');
-    }
+    HTMLClassList.add('double-top-nav-layout');
     return () => HTMLClassList.remove('double-top-nav-layout');
-  }, [navbarPosition]);
+  }, []);
 
   return (
     <>
